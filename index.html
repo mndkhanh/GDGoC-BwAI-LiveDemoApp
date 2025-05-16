@@ -1,28 +1,114 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
-    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
-    <link rel="stylesheet" href="./css/tailwind.min.css">
-    <script src="./js/tailwind.min.js"></script>
-</head>
-
-<body>
-    <header>
-        <div class="bg-grey">
-            <img width="50px" src="./assets/favicon/logo.png" alt="">
-            <ul class="text-center">
-                <li>Home</li>
-                <li>Contact</li>
-                <li>About us</li>
-            </ul>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Full Viewport Slide Website</title>
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+        <script src="./js/tailwind.min.js"></script>
+    </head>
+    <body class="h-screen w-screen flex items-center justify-center relative">
+        <div
+            id="sidebar"
+            class="fixed top-0 left-0 h-full w-64 bg-gray-800 text-white transform -translate-x-full md:translate-x-0 md:static md:block transition-transform duration-300 z-30"
+        >
+            >
+            <div
+                class="p-4 font-bold text-xl border-b border-gray-700 flex justify-between items-center"
+            >
+                Menu
+                <button
+                    id="close-sidebar"
+                    class="fixed top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded z-40 md:hidden"
+                >
+                    > &times;
+                </button>
+            </div>
+            <nav class="flex flex-col p-4 space-y-4">
+                <!-- Slide titles inserted by JS -->
+            </nav>
         </div>
-    </header>
-</body>
 
+        <!-- Toggle button -->
+        <button
+            id="toggle-sidebar"
+            class="fixed top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded z-40"
+        >
+            ☰ Menu
+        </button>
+
+        <div
+            id="slide-container"
+            class="absolute inset-0 flex justify-center text-3xl font-bold"
+        ></div>
+
+        <div
+            id="footer-container"
+            class="absolute bottom-10 left-0 right-0 flex justify-between px-10"
+        ></div>
+
+        <script>
+            const slides = [
+                {
+                    content: "Slide 1: Welcome to our website",
+                    footer: "<a href='#' onclick='nextSlide()' class='bg-blue-500 text-white px-4 py-2 rounded'>Go to Features</a>",
+                },
+                {
+                    content: "Slide 2: Explore our features",
+                    footer: "<a href='#' onclick='prevSlide()' class='bg-blue-500 text-white px-4 py-2 rounded'>Back to Home</a> <a href='#' onclick='nextSlide()' class='bg-blue-500 text-white px-4 py-2 rounded'>Contact Us</a>",
+                },
+                {
+                    content: "Slide 3: Contact us",
+                    footer: "<a href='#' onclick='prevSlide()' class='bg-blue-500 text-white px-4 py-2 rounded'>Back to Features</a>",
+                },
+            ];
+
+            let currentIndex = 0;
+
+            function updateSlide() {
+                const container = document.getElementById("slide-container");
+                const footerContainer =
+                    document.getElementById("footer-container");
+                container.innerHTML = `<div class='slide slide-enter'>${slides[currentIndex].content}</div>`;
+                footerContainer.innerHTML = slides[currentIndex].footer;
+                setTimeout(
+                    () =>
+                        container.firstElementChild.classList.add(
+                            "slide-enter-active"
+                        ),
+                    10
+                );
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlide();
+            }
+
+            function prevSlide() {
+                currentIndex =
+                    (currentIndex - 1 + slides.length) % slides.length;
+                updateSlide();
+            }
+
+            updateSlide();
+        </script>
+    </body>
 </html>
