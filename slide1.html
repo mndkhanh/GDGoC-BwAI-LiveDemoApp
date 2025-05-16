@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Full Viewport Slide Website</title>
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+        <link rel="stylesheet" href="./css/index.css" />
+        <script src="./js/tailwind.min.js"></script>
+    </head>
+    <body class="h-screen w-screen relative overflow-x-hidden">
+        <div id="slide-container" class="absolute inset-0">
+            <div
+                class="logo-live-demo-app flex justify-center items-center mt-3"
+            >
+                <img
+                    class="w-[35px] md:w-[70px]"
+                    src="./assets/images/logo-gdg.png"
+                    alt=""
+                />
+                <div class="relative">
+                    <p
+                        class="text-sm font-bold high-weight-color ml-3 md:text-xl"
+                    >
+                        Live Demo App Turorial <br />
+                    </p>
+                    <p
+                        class="w-full font-italic text-xs med-weight-color absolute text-right md:text-base"
+                    >
+                        - step by step
+                    </p>
+                </div>
+            </div>
+
+            <div class="header flex justify-center items-start mt-10">
+                <div class="w-[80vw] flex justify-center items-start">
+                    <img
+                        class="w-[25px]"
+                        src="./assets/images/double-quotes-left.png"
+                        alt=""
+                    />
+                    <p
+                        class="w-[80vw] red-color font-bold text-lg text-center md:text-3xl md:w-[50vw]"
+                    >
+                        Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem
+                        ispum
+                    </p>
+                    <img
+                        class="w-[25px]"
+                        src="./assets/images/double-quotes-right.png"
+                        alt=""
+                    />
+                </div>
+            </div>
+
+            <div
+                class="build-with-AI-card flex justify-center items-center mt-10"
+            >
+                <img
+                    src="./assets/gifs/BWAI25_SocialGifs_FindEventNearYou_01.gif"
+                    alt=""
+                    class="w-[80vw] border rounded-lg md:w-[50vw]"
+                />
+            </div>
+            <div
+                class="info-event flex flex-col justify-center items-center mt-5 leading-relaxed md:leading-loose"
+            >
+                <div
+                    class="w-[80vw] text-xs high-weight-color font-medium md:w-[50vw] flex flex-col gap-0 md:gap-5 md:text-3xl"
+                >
+                    <p>
+                        <span class="yellow-color">Organizer: </span>Google
+                        Developer Groups on Campus FPTU HCMC
+                    </p>
+                    <p>
+                        <span class="green-color">Location: </span> Hall B, FPT
+                        University on Campus HCMC
+                    </p>
+                    <p>
+                        <span class="blue-color">On-site date: </span>
+                        24/05/2025
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="action-part flex justify-center items-center mt-10 mb-10"
+            >
+                <div
+                    class="w-[80vw] flex justify-evenly items-center md:w-[50vw]"
+                >
+                    <div class="w-[160px] md:w-[400px]">
+                        <img
+                            class="w-[100%]"
+                            src="./assets/images/unlock-new-exp.png"
+                            alt=""
+                        />
+                    </div>
+                    <a
+                        class="w-[120px] md:w-[200px] inline-flex items-center flex justify-center items-center gap-2 px-2 py-2 text-xs md:text-lg font-bold text-red-600 border-2 border-red-600 rounded-full transition-shadow duration-300 hover:shadow-[0_0_10px_3px_rgba(235,68,53,0.6)]"
+                        href="https://www.facebook.com/gdg.fptu.hcmc"
+                        target="_blank"
+                    >
+                        Follow us
+                        <img
+                            class="w-4 md:w-6"
+                            src="./assets/images/red-heart.png"
+                            alt="Heart Icon"
+                        />
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="end-logo w-full flex justify-center items-center bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
+            >
+                <img
+                    class="w-[200px] md:w-[270px]"
+                    src="./assets/images/logo-gdgoc-withname.png"
+                    alt=""
+                />
+            </div>
+        </div>
+
+        <div
+            id="footer-container"
+            class="absolute bottom-10 left-0 right-0 flex justify-between"
+        ></div>
+    </body>
+</html>

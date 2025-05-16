@@ -101,32 +101,6 @@ body {
     transition: all 0.5s ease;
 }
 
-.button-follow-us {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border: 2px solid var(--red-color);
-    color: var(--red-color);
-    border-radius: 9999px;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    transition: color 0.3s;
-}
-
-.button-follow-us {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border: 2px solid var(--red-color);
-    color: var(--red-color);
-    border-radius: 9999px;
-    text-decoration: none;
-    transition: box-shadow 0.3s ease;
-}
-
-.button-follow-us:hover {
-    box-shadow: 0 0 10px 3px rgba(235, 68, 53, 0.6);
+.active-link {
+    border-left: solid 4px var(--low-weight-color);
 }

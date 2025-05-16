@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Full Viewport Slide Website</title>
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+        <link rel="stylesheet" href="./css/index.css" />
+        <script src="./js/tailwind.min.js"></script>
+    </head>
+    <body class="h-screen w-screen relative overflow-x-hidden">
+        <div id="slide-container" class="absolute inset-0">
+            <div
+                class="logo-live-demo-app flex justify-center items-center mt-3"
+            >
+                <img
+                    class="w-[35px] md:w-[70px]"
+                    src="./assets/images/logo-gdg.png"
+                    alt=""
+                />
+                <div class="relative">
+                    <p
+                        class="text-sm font-bold high-weight-color ml-3 md:text-xl"
+                    >
+                        Live Demo App Turorial <br />
+                    </p>
+                    <p
+                        class="w-full font-italic text-xs med-weight-color absolute text-right md:text-base"
+                    >
+                        - step by step
+                    </p>
+                </div>
+            </div>
+
+            <div class="header flex justify-center items-start mt-10">
+                <div class="flex justify-center items-start">
+                    <img
+                        class="w-[25px]"
+                        src="./assets/images/double-quotes-left.png"
+                        alt=""
+                    />
+                    <p
+                        class="yellow-color font-bold text-lg text-center md:text-3xl m-1"
+                    >
+                        Author
+                    </p>
+                    <img
+                        class="w-[25px]"
+                        src="./assets/images/double-quotes-right.png"
+                        alt=""
+                    />
+                </div>
+            </div>
+
+            <div
+                class="profile flex flex-col md:flex-row justify-center items-center gap-6 mt-10 w-[80vw] md:w-[50vw] mx-auto p-4"
+            >
+                <div class="flex-4 flex basis-2 flex-col items-center">
+                    <img
+                        src="./assets/images/avatar.png"
+                        alt="Profile Picture"
+                        class="w-[100%] rounded-lg shadow-md"
+                    />
+                    <p
+                        class="text-center font-bold text-xl high-weight-color mt-8"
+                    >
+                        Nguyễn Đức Tuấn
+                    </p>
+                    <p class="text-center text-gray-600 italic">
+                        - Club's Technical Consultant -
+                    </p>
+                </div>
+                <div
+                    class="flex-5 self-start basis-3 p-10 bg-white rounded-lg border-2 border-[#D9D9D9] shadow-xl shadow-gray-500/80"
+                >
+                    <p
+                        class="text-sm md:text-xl font-bold leading-relaxed high-weight-color"
+                    >
+                        “ Build with AI is a signature event of the GDG
+                        community in general and GDGoC in particular.
+                        Participating in the event is an opportunity for us to
+                        meet, networking, and learn new things. ”
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="action-part flex justify-center items-center mt-10 mb-10"
+            >
+                <div
+                    class="w-[80vw] flex justify-evenly items-center md:w-[50vw]"
+                >
+                    <div class="w-[160px] md:w-[400px]">
+                        <img
+                            class="w-[100%]"
+                            src="./assets/images/unlock-new-exp.png"
+                            alt=""
+                        />
+                    </div>
+                    <a
+                        class="w-[120px] md:w-[200px] inline-flex items-center flex justify-center items-center gap-2 px-2 py-2 text-xs md:text-lg font-bold text-red-600 border-2 border-red-600 rounded-full transition-shadow duration-300 hover:shadow-[0_0_10px_3px_rgba(235,68,53,0.6)]"
+                        href="https://www.facebook.com/gdg.fptu.hcmc"
+                        target="_blank"
+                    >
+                        Follow us
+                        <img
+                            class="w-4 md:w-6"
+                            src="./assets/images/red-heart.png"
+                            alt="Heart Icon"
+                        />
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="end-logo w-full flex justify-center items-center bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
+            >
+                <img
+                    class="w-[200px] md:w-[270px]"
+                    src="./assets/images/logo-gdgoc-withname.png"
+                    alt=""
+                />
+            </div>
+        </div>
+
+        <div
+            id="footer-container"
+            class="absolute bottom-10 left-0 right-0 flex justify-between"
+        ></div>
+    </body>
+</html>

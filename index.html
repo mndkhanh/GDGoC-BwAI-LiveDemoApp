@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Full Viewport Slide Website</title>
+        <title>Live Demo App</title>
         <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -22,42 +22,60 @@
             href="./assets/favicon/favicon-16x16.png"
         />
         <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+        <link rel="stylesheet" href="./css/index.css" />
         <script src="./js/tailwind.min.js"></script>
+        <style>
+            .slide-enter {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+            .slide-enter-active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .sidebar-enter {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            .sidebar-enter-active {
+                transform: translateX(0);
+            }
+            .sidebar-exit {
+                transform: translateX(0);
+                transition: transform 0.3s ease;
+            }
+            .sidebar-exit-active {
+                transform: translateX(-100%);
+            }
+        </style>
     </head>
-    <body class="h-screen w-screen flex items-center justify-center relative">
+    <body
+        class="h-screen w-screen flex items-center justify-center relative overflow-x-hidden"
+    >
+        <!-- Sidebar -->
         <div
             id="sidebar"
-            class="fixed top-0 left-0 h-full w-64 bg-gray-800 text-white transform -translate-x-full md:translate-x-0 md:static md:block transition-transform duration-300 z-30"
+            class="fixed top-0 left-0 h-full w-64 bg-gray-800 text-white transform -translate-x-full z-30 sidebar-enter"
         >
-            >
             <div
                 class="p-4 font-bold text-xl border-b border-gray-700 flex justify-between items-center"
             >
                 Menu
                 <button
                     id="close-sidebar"
-                    class="fixed top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded z-40 md:hidden"
+                    class="text-white text-2xl leading-none"
                 >
-                    > &times;
+                    &times;
                 </button>
             </div>
-            <nav class="flex flex-col p-4 space-y-4">
-                <!-- Slide titles inserted by JS -->
-            </nav>
+            <nav class="flex flex-col p-4 space-y-4"></nav>
         </div>
 
         <!-- Toggle button -->
-        <button
-            id="toggle-sidebar"
-            class="fixed top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded z-40"
-        >
-            ☰ Menu
-        </button>
+        <button id="toggle-sidebar" class="fixed top-4 left-4 z-40">☰</button>
 
-        <div
-            id="slide-container"
-            class="absolute inset-0 flex justify-center text-3xl font-bold"
-        ></div>
+        <div id="slide-container" class="absolute inset-0"></div>
 
         <div
             id="footer-container"
@@ -67,34 +85,489 @@
         <script>
             const slides = [
                 {
-                    content: "Slide 1: Welcome to our website",
+                    title: "Welcome",
+                    content: `<div
+                class="logo-live-demo-app flex justify-center items-center mt-3"
+            >
+                <img
+                    class="w-[35px] md:w-[70px]"
+                    src="./assets/images/logo-gdg.png"
+                    alt=""
+                />
+                <div class="relative">
+                    <p
+                        class="text-sm font-bold high-weight-color ml-3 md:text-xl"
+                    >
+                        Live Demo App Turorial <br />
+                    </p>
+                    <p
+                        class="w-full font-italic text-xs med-weight-color absolute text-right md:text-base"
+                    >
+                        - step by step
+                    </p>
+                </div>
+            </div>
+
+            <div class="header flex justify-center items-start mt-10">
+                <div class="w-[80vw] flex justify-center items-start">
+                    <img
+                        class="w-[25px]"
+                        src="./assets/images/double-quotes-left.png"
+                        alt=""
+                    />
+                    <p
+                        class="w-[80vw] red-color font-bold text-lg text-center md:text-3xl md:w-[50vw]"
+                    >
+                        Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem
+                        ispum
+                    </p>
+                    <img
+                        class="w-[25px]"
+                        src="./assets/images/double-quotes-right.png"
+                        alt=""
+                    />
+                </div>
+            </div>
+
+            <div
+                class="build-with-AI-card flex justify-center items-center mt-10"
+            >
+                <img
+                    src="./assets/gifs/BWAI25_SocialGifs_FindEventNearYou_01.gif"
+                    alt=""
+                    class="w-[80vw] border rounded-lg md:w-[50vw]"
+                />
+            </div>
+            <div
+                class="info-event flex flex-col justify-center items-center mt-5 leading-relaxed md:leading-loose"
+            >
+                <div
+                    class="w-[80vw] text-xs high-weight-color font-medium md:w-[50vw] flex flex-col gap-0 md:gap-5 md:text-3xl"
+                >
+                    <p>
+                        <span class="yellow-color">Organizer: </span>Google
+                        Developer Groups on Campus FPTU HCMC
+                    </p>
+                    <p>
+                        <span class="green-color">Location: </span> Hall B, FPT
+                        University on Campus HCMC
+                    </p>
+                    <p>
+                        <span class="blue-color">On-site date: </span>
+                        24/05/2025
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="action-part flex justify-center items-center mt-10 mb-10"
+            >
+                <div
+                    class="w-[80vw] flex justify-evenly items-center md:w-[50vw]"
+                >
+                    <div class="w-[160px] md:w-[400px]">
+                        <img
+                            class="w-[100%]"
+                            src="./assets/images/unlock-new-exp.png"
+                            alt=""
+                        />
+                    </div>
+                    <a
+                        class="w-[120px] md:w-[200px] inline-flex items-center flex justify-center items-center gap-2 px-2 py-2 text-xs md:text-lg font-bold text-red-600 border-2 border-red-600 rounded-full transition-shadow duration-300 hover:shadow-[0_0_10px_3px_rgba(235,68,53,0.6)]"
+                        href="https://www.facebook.com/gdg.fptu.hcmc"
+                        target="_blank"
+                    >
+                        Follow us
+                        <img
+                            class="w-4 md:w-6"
+                            src="./assets/images/red-heart.png"
+                            alt="Heart Icon"
+                        />
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="end-logo w-full flex justify-center items-center bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
+            >
+                <img
+                    class="w-[200px] md:w-[270px]"
+                    src="./assets/images/logo-gdgoc-withname.png"
+                    alt=""
+                />
+            </div>`,
                     footer: "<a href='#' onclick='nextSlide()' class='bg-blue-500 text-white px-4 py-2 rounded'>Go to Features</a>",
                 },
                 {
-                    content: "Slide 2: Explore our features",
+                    title: "Features",
+                    content: `<div
+                class="logo-live-demo-app flex justify-center items-center mt-3"
+            >
+                <img
+                    class="w-[35px] md:w-[70px]"
+                    src="./assets/images/logo-gdg.png"
+                    alt=""
+                />
+                <div class="relative">
+                    <p
+                        class="text-sm font-bold high-weight-color ml-3 md:text-xl"
+                    >
+                        Live Demo App Turorial <br />
+                    </p>
+                    <p
+                        class="w-full font-italic text-xs med-weight-color absolute text-right md:text-base"
+                    >
+                        - step by step
+                    </p>
+                </div>
+            </div>
+
+            <div class="header flex justify-center items-start mt-10">
+                <div class="flex justify-center items-start">
+                    <img
+                        class="w-[25px]"
+                        src="./assets/images/double-quotes-left.png"
+                        alt=""
+                    />
+                    <p
+                        class="yellow-color font-bold text-lg text-center md:text-3xl m-1"
+                    >
+                        Author
+                    </p>
+                    <img
+                        class="w-[25px]"
+                        src="./assets/images/double-quotes-right.png"
+                        alt=""
+                    />
+                </div>
+            </div>
+
+            <div
+                class="profile flex flex-col md:flex-row justify-center items-center gap-6 mt-10 w-[80vw] md:w-[50vw] mx-auto p-4"
+            >
+                <div class="flex-4 flex basis-2 flex-col items-center">
+                    <img
+                        src="./assets/images/avatar.png"
+                        alt="Profile Picture"
+                        class="w-[100%] rounded-lg shadow-md"
+                    />
+                    <p
+                        class="text-center font-bold text-xl high-weight-color mt-8"
+                    >
+                        Nguyễn Đức Tuấn
+                    </p>
+                    <p class="text-center text-gray-600 italic">
+                        - Club's Technical Consultant -
+                    </p>
+                </div>
+                <div
+                    class="flex-5 self-start basis-3 p-10 bg-white rounded-lg border-2 border-[#D9D9D9] shadow-xl shadow-gray-500/80"
+                >
+                    <p
+                        class="text-sm md:text-xl font-bold leading-relaxed high-weight-color"
+                    >
+                        “ Build with AI is a signature event of the GDG
+                        community in general and GDGoC in particular.
+                        Participating in the event is an opportunity for us to
+                        meet, networking, and learn new things. ”
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="action-part flex justify-center items-center mt-10 mb-10"
+            >
+                <div
+                    class="w-[80vw] flex justify-evenly items-center md:w-[50vw]"
+                >
+                    <div class="w-[160px] md:w-[400px]">
+                        <img
+                            class="w-[100%]"
+                            src="./assets/images/unlock-new-exp.png"
+                            alt=""
+                        />
+                    </div>
+                    <a
+                        class="w-[120px] md:w-[200px] inline-flex items-center flex justify-center items-center gap-2 px-2 py-2 text-xs md:text-lg font-bold text-red-600 border-2 border-red-600 rounded-full transition-shadow duration-300 hover:shadow-[0_0_10px_3px_rgba(235,68,53,0.6)]"
+                        href="https://www.facebook.com/gdg.fptu.hcmc"
+                        target="_blank"
+                    >
+                        Follow us
+                        <img
+                            class="w-4 md:w-6"
+                            src="./assets/images/red-heart.png"
+                            alt="Heart Icon"
+                        />
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="end-logo w-full flex justify-center items-center bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
+            >
+                <img
+                    class="w-[200px] md:w-[270px]"
+                    src="./assets/images/logo-gdgoc-withname.png"
+                    alt=""
+                />
+            </div>`,
                     footer: "<a href='#' onclick='prevSlide()' class='bg-blue-500 text-white px-4 py-2 rounded'>Back to Home</a> <a href='#' onclick='nextSlide()' class='bg-blue-500 text-white px-4 py-2 rounded'>Contact Us</a>",
                 },
                 {
-                    content: "Slide 3: Contact us",
+                    title: "Contact",
+                    content: `<div
+                class="logo-live-demo-app flex justify-center items-center mt-3"
+            >
+                <img
+                    class="w-[35px] md:w-[70px]"
+                    src="./assets/images/logo-gdg.png"
+                    alt=""
+                />
+                <div class="relative">
+                    <p
+                        class="text-sm font-bold high-weight-color ml-3 md:text-xl"
+                    >
+                        Live Demo App Turorial <br />
+                    </p>
+                    <p
+                        class="w-full font-italic text-xs med-weight-color absolute text-right md:text-base"
+                    >
+                        - step by step
+                    </p>
+                </div>
+            </div>
+
+            <div class="header flex justify-center items-start mt-10">
+                <div class="w-[80vw] flex justify-center items-start">
+                    <img
+                        class="w-[25px]"
+                        src="./assets/images/double-quotes-left.png"
+                        alt=""
+                    />
+                    <p
+                        class="w-[80vw] red-color font-bold text-lg text-center md:text-3xl md:w-[50vw]"
+                    >
+                        Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem
+                        ispum
+                    </p>
+                    <img
+                        class="w-[25px]"
+                        src="./assets/images/double-quotes-right.png"
+                        alt=""
+                    />
+                </div>
+            </div>
+
+            <div
+                class="md:w-[80vw] w-[100vw] flex items-start mx-auto md:mt-20 relative"
+            >
+                <div
+                    class="flex-5 p-8 space-y-12 overflow-y-auto high-weight-color"
+                >
+                    <p
+                        class="blue-color font-bold text-2xl text-center md:text-3xl md:mb-20"
+                    >
+                        Turtorial
+                    </p>
+                    <h2
+                        id="section1"
+                        class="text-2xl font-bold text-orange-500"
+                    >
+                        Introduction
+                    </h2>
+                    <img
+                        class="mx-auto w-[50%] m-0"
+                        src="./assets/images/build-with-ai.png"
+                        alt=""
+                    />
+                    <p>
+                        Content for Introduction section... Lorem ipsum dolor
+                        sit amet consectetur adipisicing elit. Facilis maxime
+                        veniam voluptatibus eligendi sunt pariatur voluptatem
+                        necessitatibus, blanditiis cupiditate esse ipsam minima
+                        impedit, consectetur reiciendis tenetur incidunt
+                        tempore, perspiciatis perferendis. <br />
+                        Content for Lorem ipsum lorem section... Content for
+                        Introduction section... Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Facilis maxime veniam
+                        voluptatibus eligendi sunt pariatur voluptatem
+                        necessitatibus, blanditiis cupiditate
+                    </p>
+
+                    <h2 id="section2" class="text-2xl font-bold text-green-500">
+                        Lorem ipsum lorem
+                    </h2>
+                    <p>
+                        Content for Lorem ipsum lorem section... Content for
+                        Introduction section... Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Facilis maxime veniam
+                        voluptatibus eligendi sunt pariatur voluptatem
+                        necessitatibus, blanditiis cupiditate esse ipsam minima
+                        impedit, consectetur reiciendis tenetur incidunt
+                        tempore, perspiciatis perferendis. Content for
+                        Introduction section... Lorem ipsum dolor sit amet
+                        consectetur
+                        <br />
+                        Content for Post Writing section... Content for
+                        Introduction section... Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Facilis maxime veniam
+                        voluptatibus eligendi sunt pariatur voluptatem
+                        necessitatibus, blanditiis cupiditate esse ipsam minima
+                        impedit, consectetur reiciendis tenetur incidunt
+                        tempore, perspiciatis perferendis. Content for
+                        Introduction section... Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Facilis maxime veniam
+                        voluptatibus eligendi sunt pariatur voluptatem
+                        necessitatibus, blanditiis cupiditate esse ipsam minima
+                        impedit, consectetur reiciendis tenetur incidunt
+                        tempore, perspiciatis perferendis.incidunt tempore,
+                        perspiciatis perferendis. Content for Introduction
+                        section... Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Facilis maxime veniam voluptatibus
+                        eligendi sunt pariatur voluptatem necessitatibus,
+                        blanditiis cupiditate esse ipsam minima impedit,
+                        consectetur reiciendis
+                        <br />Content for Post Writing section... Content for
+                        Introduction section... Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Facilis maxime veniam
+                        voluptatibus eligendi sunt pariatur voluptatem
+                        necessitatibus, blanditiis cupiditate esse ipsam minima
+                        impedit, consectetur reiciendis tenetur incidunt
+                        tempore, perspiciatis perferendis. Content for
+                        Introduction section... Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Facilis maxime veniam
+                        voluptatibus eligendi sunt pariatur voluptatem
+                        necessitatibus, blanditiis cupiditate esse ipsam minima
+                        impedit, consectetur reiciendis tenetur incidunt
+                        tempore, perspiciatis perferendis.incidunt tempore,
+                        perspiciatis perferendis. Content for Introduction
+                        section... Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Facilis maxime veniam voluptatibus
+                        eligendi sunt pariatur voluptatem necessitatibus,
+                        blanditiis cupiditate esse ipsam minima impedit,
+                        consectetur reiciendis
+                    </p>
+
+                    <h2 id="section3" class="text-2xl font-bold text-red-500">
+                        Post Writing
+                    </h2>
+                    <p>
+                        Content for Post Writing section... Content for
+                        Introduction section... Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Facilis maxime veniam
+                        voluptatibus eligendi sunt pariatur voluptatem
+                        necessitatibus, blanditiis cupiditate esse ipsam minima
+                        impedit, consectetur reiciendis tenetur incidunt
+                        tempore, perspiciatis perferendis. Content for
+                        Introduction section... Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Facilis maxime veniam
+                        voluptatibus eligendi sunt pariatur voluptatem
+                        necessitatibus, blanditiis cupiditate esse ipsam minima
+                        impedit, consectetur reiciendis tenetur incidunt
+                        tempore, perspiciatis perferendis.incidunt tempore,
+                        perspiciatis perferendis. Content for Introduction
+                        section... Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Facilis maxime veniam voluptatibus
+                        eligendi sunt pariatur voluptatem necessitatibus,
+                        blanditiis cupiditate esse ipsam minima impedit,
+                        consectetur reiciendis
+                    </p>
+                    <div
+                        class="action-part flex justify-center items-center mt-10 mb-10"
+                    >
+                        <div
+                            class="w-[80vw] flex justify-evenly items-center md:w-[50vw]"
+                        >
+                            <div class="w-[160px] md:w-[400px]">
+                                <img
+                                    class="w-[100%]"
+                                    src="./assets/images/unlock-new-exp.png"
+                                    alt=""
+                                />
+                            </div>
+                            <a
+                                class="w-[120px] md:w-[200px] inline-flex items-center flex justify-center items-center gap-2 px-2 py-2 text-xs md:text-lg font-bold text-red-600 border-2 border-red-600 rounded-full transition-shadow duration-300 hover:shadow-[0_0_10px_3px_rgba(235,68,53,0.6)]"
+                                href="https://www.facebook.com/gdg.fptu.hcmc"
+                                target="_blank"
+                            >
+                                Follow us
+                                <img
+                                    class="w-4 md:w-6"
+                                    src="./assets/images/red-heart.png"
+                                    alt="Heart Icon"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex-2 sticky text-lg top-[50px] flex flex-col items-start p-4 hidden md:flex mt-4"
+                >
+                    <p class="font-bold high-weight-color">
+                        Table of Contents.
+                    </p>
+                    <a
+                        href="#section1"
+                        class="pl-3 text-base toc-link py-2 text-gray-500"
+                        >Introduction..........................................................</a
+                    >
+                    <a
+                        href="#section2"
+                        class="pl-3 text-base toc-link py-2 text-gray-500"
+                        >Lorem ipsum lorem Lorem ipsum lorem Lorem ipsum lorem
+                        Lorem ipsum lorem</a
+                    >
+                    <a
+                        href="#section3"
+                        class="pl-3 text-base toc-link py-2 text-gray-500"
+                        >Post Writing</a
+                    >
+                </div>
+            </div>
+
+            <div
+                class="end-logo w-full flex justify-center items-center bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
+            >
+                <img
+                    class="w-[200px] md:w-[270px]"
+                    src="./assets/images/logo-gdgoc-withname.png"
+                    alt=""
+                />
+            </div>`,
                     footer: "<a href='#' onclick='prevSlide()' class='bg-blue-500 text-white px-4 py-2 rounded'>Back to Features</a>",
                 },
             ];
 
             let currentIndex = 0;
+            const container = document.getElementById("slide-container");
+            const footerContainer = document.getElementById("footer-container");
+            const sidebar = document.getElementById("sidebar");
+            const nav = sidebar.querySelector("nav");
+            const toggleBtn = document.getElementById("toggle-sidebar");
+            const closeBtn = document.getElementById("close-sidebar");
+
+            // Populate sidebar with slide titles
+            slides.forEach((slide, i) => {
+                const btn = document.createElement("button");
+                btn.textContent = slide.title;
+                btn.className = "text-left hover:bg-gray-700 px-2 py-1 rounded";
+                btn.onclick = () => {
+                    currentIndex = i;
+                    updateSlide();
+                    closeSidebar();
+                };
+                nav.appendChild(btn);
+            });
 
             function updateSlide() {
-                const container = document.getElementById("slide-container");
-                const footerContainer =
-                    document.getElementById("footer-container");
                 container.innerHTML = `<div class='slide slide-enter'>${slides[currentIndex].content}</div>`;
                 footerContainer.innerHTML = slides[currentIndex].footer;
-                setTimeout(
-                    () =>
-                        container.firstElementChild.classList.add(
-                            "slide-enter-active"
-                        ),
-                    10
-                );
+                setTimeout(() => {
+                    container.firstElementChild.classList.add(
+                        "slide-enter-active"
+                    );
+                }, 10);
+                stickEventToStickySideBar();
             }
 
             function nextSlide() {
@@ -108,7 +581,52 @@
                 updateSlide();
             }
 
+            function openSidebar() {
+                sidebar.classList.remove("-translate-x-full");
+                sidebar.classList.add("sidebar-enter-active");
+                toggleBtn.classList.add("hidden");
+            }
+
+            function closeSidebar() {
+                sidebar.classList.add("-translate-x-full");
+                sidebar.classList.remove("sidebar-enter-active");
+                toggleBtn.classList.remove("hidden");
+            }
+
+            toggleBtn.addEventListener("click", () => {
+                if (sidebar.classList.contains("-translate-x-full")) {
+                    openSidebar();
+                } else {
+                    closeSidebar();
+                }
+            });
+
+            closeBtn.addEventListener("click", closeSidebar);
+
             updateSlide();
+
+            function stickEventToStickySideBar() {
+                const links = document.querySelectorAll(".toc-link");
+                const sections = document.querySelectorAll("h2");
+
+                window.addEventListener("scroll", () => {
+                    let current = "";
+
+                    sections.forEach((section) => {
+                        const sectionTop = section.offsetTop - 50;
+                        if (window.scrollY >= sectionTop) {
+                            current = section.getAttribute("id");
+                        }
+                    });
+
+                    links.forEach((link) => {
+                        link.classList.remove("active-link");
+                        if (link.getAttribute("href") === `#${current}`) {
+                            link.classList.add("active-link");
+                        }
+                    });
+                });
+            }
         </script>
     </body>
 </html>

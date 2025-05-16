@@ -3,135 +3,304 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Full Viewport Slide Website</title>
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="./assets/favicon/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="./assets/favicon/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="./assets/favicon/favicon-16x16.png"
-        />
-        <link rel="manifest" href="./assets/favicon/site.webmanifest" />
-        <link rel="stylesheet" href="./css/index.css" />
-        <script src="./js/tailwind.min.js"></script>
+        <title>Interactive Table of Contents</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            .active-link {
+                color: #000000;
+                font-weight: bold;
+                border-right: 4px solid #ff7f0e;
+            }
+        </style>
     </head>
-    <body class="h-screen w-screen relative">
-        <div id="slide-container" class="absolute inset-0">
-            <div
-                class="logo-live-demo-app flex justify-center items-center mt-5"
+    <body class="flex">
+        <div class="w-1/4 h-screen sticky top-0 flex flex-col items-start p-4">
+            <a href="#section1" class="toc-link py-2 text-gray-500"
+                >Introduction</a
             >
-                <img
-                    class="w-[35px]"
-                    src="./assets/images/logo-gdg.png"
-                    alt=""
-                />
-                <div class="relative">
-                    <p class="text-sm font-bold high-weight-color ml-3">
-                        Live Demo App Turorial <br />
-                    </p>
-                    <p
-                        class="w-full font-italic text-xs med-weight-color absolute text-right"
-                    >
-                        - step by step
-                    </p>
-                </div>
-            </div>
-
-            <div class="header flex justify-center items-start mt-10">
-                <div class="w-[80vw] flex justify-center items-start">
-                    <img
-                        class="w-[25px]"
-                        src="./assets/images/double-quotes-left.png"
-                        alt=""
-                    />
-                    <p class="red-color font-bold text-lg text-center">
-                        Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem
-                        ispum
-                    </p>
-                    <img
-                        class="w-[25px]"
-                        src="./assets/images/double-quotes-right.png"
-                        alt=""
-                    />
-                </div>
-            </div>
-
-            <div
-                class="build-with-AI-card flex justify-center items-center mt-10"
+            <a href="#section2" class="toc-link py-2 text-gray-500"
+                >Lorem ipsum lorem</a
             >
-                <img
-                    src="./assets/gifs/BWAI25_SocialGifs_FindEventNearYou_01.gif"
-                    alt=""
-                    class="w-[80vw] border rounded-lg md:w-[50vw]"
-                />
-            </div>
-            <div
-                class="info-event flex flex-col justify-center items-center mt-5 rounded"
+            <a href="#section3" class="toc-link py-2 text-gray-500"
+                >Post Writing</a
             >
-                <div
-                    class="w-[80vw] text-sm high-weight-color font-medium md:w-[50vw]"
-                >
-                    <p>
-                        <span class="yellow-color">Organizer: </span>Google
-                        Developer Groups on Campus FPTU HCMC
-                    </p>
-                    <p>
-                        <span class="green-color">Location: </span> Hall B, FPT
-                        University on Campus HCMC
-                    </p>
-                    <p>
-                        <span class="blue-color">On-site date: </span>
-                        24/05/2025
-                    </p>
-                </div>
-            </div>
-
-            <div class="action-part flex justify-center items-center mt-20">
-                <div class="w-[80vw] flex justify-between items-center">
-                    <img
-                        class="w-[200px]"
-                        src="./assets/images/unlock-new-exp.png"
-                        alt=""
-                    />
-                    <a
-                        class="inline-flex items-center text-xs gap-2 px-2 py-1 border-2 border-red-600 text-red-600 rounded-full transition-shadow duration-300 hover:shadow-[0_0_10px_3px_rgba(235,68,53,0.6)] font-bold"
-                        href="https://www.facebook.com/gdg.fptu.hcmc"
-                        target="_blank"
-                    >
-                        Follow us
-                        <img
-                            width="20px"
-                            src="./assets/images/red-heart.png"
-                            alt="Heart Icon"
-                        />
-                    </a>
-                </div>
-            </div>
-
-            <div
-                class="end-logo fixed bottom-0 left-0 right-0 h-[50px] flex justify-center items-center bg-white"
-            >
-                <img
-                    class="w-[230px]"
-                    src="./assets/images/logo-gdgoc-withname.png"
-                    alt=""
-                />
-            </div>
         </div>
 
-        <div
-            id="footer-container"
-            class="absolute bottom-10 left-0 right-0 flex justify-between px-10"
-        ></div>
+        <div class="w-3/4 p-8 space-y-12 overflow-y-auto">
+            <h2 id="section1" class="text-2xl font-bold text-orange-500">
+                Introduction
+            </h2>
+            <p>
+                Content for Introduction section... Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Facilis maxime veniam voluptatibus
+                eligendi sunt pariatur voluptatem necessitatibus, blanditiis
+                cupiditate esse ipsam minima impedit, consectetur reiciendis
+                tenetur incidunt tempore, perspiciatis perferendis. <br />
+                Content for Lorem ipsum lorem section... Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis.
+                <br />
+                Content for Lorem ipsum lorem section... Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis.
+            </p>
+
+            <h2 id="section2" class="text-2xl font-bold text-green-500">
+                Lorem ipsum lorem
+            </h2>
+            <p>
+                Content for Lorem ipsum lorem section... Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. <br />
+                Content for Introduction section... Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Facilis maxime veniam voluptatibus
+                eligendi sunt pariatur voluptatem necessitatibus, blanditiis
+                cupiditate esse ipsam minima impedit, consectetur reiciendis
+                tenetur incidunt tempore, perspiciatis perferendis. <br />
+                Content for Lorem ipsum lorem section... Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis.
+                <br />
+                Content for Lorem ipsum lorem section... Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis.
+            </p>
+
+            <h2 id="section3" class="text-2xl font-bold text-red-500">
+                Post Writing
+            </h2>
+            <p>
+                Content for Post Writing section... Content for Introduction
+                section... Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Facilis maxime veniam voluptatibus eligendi sunt pariatur
+                voluptatem necessitatibus, blanditiis cupiditate esse ipsam
+                minima impedit, consectetur reiciendis tenetur incidunt tempore,
+                perspiciatis perferendis. Content for Introduction section...
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+                maxime veniam voluptatibus eligendi sunt pariatur voluptatem
+                necessitatibus, blanditiis cupiditate esse ipsam minima impedit,
+                consectetur reiciendis tenetur incidunt tempore, perspiciatis
+                perferendis.incidunt tempore, perspiciatis perferendis. Content
+                for Introduction section... Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Facilis maxime veniam voluptatibus
+                eligendi sunt pariatur voluptatem necessitatibus, blanditiis
+                cupiditate esse ipsam minima impedit, consectetur reiciendis
+                tenetur incidunt tempore, perspiciatis perferendis. <br />
+                Content for Introduction section... Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Facilis maxime veniam voluptatibus
+                eligendi sunt pariatur voluptatem necessitatibus, blanditiis
+                cupiditate esse ipsam minima impedit, consectetur reiciendis
+                tenetur incidunt tempore, perspiciatis perferendis. <br />
+                Content for Lorem ipsum lorem section... Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis.
+                <br />
+                Content for Lorem ipsum lorem section... Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis.incidunt tempore,
+                perspiciatis perferendis. Content for Introduction section...
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+                maxime veniam voluptatibus eligendi sunt pariatur voluptatem
+                necessitatibus, blanditiis cupiditate esse ipsam minima impedit,
+                consectetur reiciendis tenetur incidunt tempore, perspiciatis
+                perferendis. <br />
+                Content for Introduction section... Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Facilis maxime veniam voluptatibus
+                eligendi sunt pariatur voluptatem necessitatibus, blanditiis
+                cupiditate esse ipsam minima impedit, consectetur reiciendis
+                tenetur incidunt tempore, perspiciatis perferendis. <br />
+                Content for Lorem ipsum lorem section... Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis.
+                <br />
+                Content for Lorem ipsum lorem section... Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis.incidunt tempore,
+                perspiciatis perferendis. Content for Introduction section...
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+                maxime veniam voluptatibus eligendi sunt pariatur voluptatem
+                necessitatibus, blanditiis cupiditate esse ipsam minima impedit,
+                consectetur reiciendis tenetur incidunt tempore, perspiciatis
+                perferendis. <br />
+                Content for Introduction section... Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Facilis maxime veniam voluptatibus
+                eligendi sunt pariatur voluptatem necessitatibus, blanditiis
+                cupiditate esse ipsam minima impedit, consectetur reiciendis
+                tenetur incidunt tempore, perspiciatis perferendis. <br />
+                Content for Lorem ipsum lorem section... Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis.
+                <br />
+                Content for Lorem ipsum lorem section... Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis. Content for
+                Introduction section... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis maxime veniam voluptatibus eligendi
+                sunt pariatur voluptatem necessitatibus, blanditiis cupiditate
+                esse ipsam minima impedit, consectetur reiciendis tenetur
+                incidunt tempore, perspiciatis perferendis.
+            </p>
+        </div>
+
+        <script>
+            const links = document.querySelectorAll(".toc-link");
+            const sections = document.querySelectorAll("h2");
+
+            window.addEventListener("scroll", () => {
+                let current = "";
+
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop - 100;
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute("id");
+                    }
+                });
+
+                links.forEach((link) => {
+                    link.classList.remove("active-link");
+                    if (link.getAttribute("href") === `#${current}`) {
+                        link.classList.add("active-link");
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
