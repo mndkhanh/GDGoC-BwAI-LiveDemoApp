@@ -26,7 +26,29 @@
         <script src="./js/tailwind.min.js"></script>
     </head>
     <body class="h-screen w-screen relative overflow-x-hidden">
-        <div id="slide-container" class="absolute inset-0">
+        <!-- Sidebar -->
+        <div
+            id="sidebar"
+            class="fixed top-0 left-0 h-full w-64 bg-gray-800 text-white transform -translate-x-full z-30 sidebar-enter"
+        >
+            <div
+                class="p-4 font-bold text-xl border-b border-gray-700 flex justify-between items-center"
+            >
+                Menu
+                <button
+                    id="close-sidebar"
+                    class="text-white text-2xl leading-none"
+                >
+                    &times;
+                </button>
+            </div>
+            <nav class="flex flex-col p-4 space-y-4"></nav>
+        </div>
+
+        <!-- Toggle button -->
+        <button id="toggle-sidebar" class="fixed top-4 left-4 z-40">☰</button>
+
+        <div id="slide-container" class="">
             <div
                 class="logo-live-demo-app flex justify-center items-center mt-3"
             >
@@ -129,19 +151,33 @@
             </div>
 
             <div
-                class="end-logo w-full flex justify-center items-center bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
+                class="fixed px-2 bottom-0 md:static end-logo flex-row w-full flex justify-between md:justify-center items-center bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
             >
                 <img
                     class="w-[200px] md:w-[270px]"
                     src="./assets/images/logo-gdgoc-withname.png"
                     alt=""
                 />
+                <p
+                    class="md:absolute right-10 font-italic med-weight-color text-xs md:text-sm"
+                >
+                    by mndkhanh.
+                </p>
+            </div>
+
+            <div
+                onclick="nextSlide()"
+                class="fixed top-[10vh] right-[2vw] w-[10vw] h-[80vh] md:flex justify-end items-center font-regular hover:scale-110 hover:cursor-pointer transition-transform duration-200 hidden"
+            >
+                <p class="text-base med-weight-color">Author</p>
+                <img
+                    width="30px"
+                    src="./assets/icons/arrow-foward.png"
+                    alt=""
+                />
             </div>
         </div>
 
-        <div
-            id="footer-container"
-            class="absolute bottom-10 left-0 right-0 flex justify-between"
-        ></div>
+        <div id="footer-container" class="absolute"></div>
     </body>
 </html>

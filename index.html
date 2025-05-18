@@ -64,7 +64,7 @@
                 Menu
                 <button
                     id="close-sidebar"
-                    class="text-white text-2xl leading-none"
+                    class="text-white text-2xl leading-none hover:cursor-pointer"
                 >
                     &times;
                 </button>
@@ -73,19 +73,19 @@
         </div>
 
         <!-- Toggle button -->
-        <button id="toggle-sidebar" class="fixed top-4 left-4 z-40">☰</button>
+        <button
+            id="toggle-sidebar"
+            class="fixed top-4 left-4 z-40 hover:cursor-pointer"
+        >
+            ☰
+        </button>
 
         <div id="slide-container" class="absolute inset-0"></div>
-
-        <div
-            id="footer-container"
-            class="absolute bottom-10 left-0 right-0 flex justify-between px-10"
-        ></div>
 
         <script>
             const slides = [
                 {
-                    title: "Welcome",
+                    title: "Home",
                     content: `<div
                 class="logo-live-demo-app flex justify-center items-center mt-3"
             >
@@ -188,18 +188,34 @@
             </div>
 
             <div
-                class="end-logo w-full flex justify-center items-center bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
+                class="fixed px-5 bottom-0 md:static end-logo flex-row w-full flex justify-between md:justify-center items-center bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
             >
                 <img
                     class="w-[200px] md:w-[270px]"
                     src="./assets/images/logo-gdgoc-withname.png"
                     alt=""
                 />
+                <p
+                    class="md:absolute right-10 font-italic med-weight-color text-xs md:text-sm"
+                >
+                    by mndkhanh.
+                </p>
+            </div>
+            <div
+                onclick="nextSlide()"
+                class="fixed top-[10vh] right-[2.5vw] w-[10vw] h-[80vh] md:flex justify-end items-center font-regular hover:scale-110 hover:cursor-pointer transition-transform duration-200 hidden"
+            >
+                <p class="text-base med-weight-color">Author</p>
+                <img
+                    width="30px"
+                    src="./assets/icons/arrow-foward.png"
+                    alt=""
+                    class="block"
+                />
             </div>`,
-                    footer: "<a href='#' onclick='nextSlide()' class='bg-blue-500 text-white px-4 py-2 rounded'>Go to Features</a>",
                 },
                 {
-                    title: "Features",
+                    title: "Author",
                     content: `<div
                 class="logo-live-demo-app flex justify-center items-center mt-3"
             >
@@ -303,18 +319,41 @@
             </div>
 
             <div
-                class="end-logo w-full flex justify-center items-center bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
+                class="px-5 bottom-0 md:static end-logo flex-row w-full flex justify-between md:justify-center items-center bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
             >
                 <img
                     class="w-[200px] md:w-[270px]"
                     src="./assets/images/logo-gdgoc-withname.png"
                     alt=""
                 />
+                <p
+                    class="md:absolute right-10 font-italic med-weight-color text-xs md:text-sm"
+                >
+                    by mndkhanh.
+                </p>
+            </div>
+            <div
+                onclick="prevSlide()"
+                class="fixed top-[10vh] left-[2vw] w-[10vw] h-[80vh] md:flex items-center font-regular hover:scale-110 hover:cursor-pointer transition-transform duration-200 hidden"
+            >
+                <img width="30px" src="./assets/icons/arrow_back.png" alt="" class="block"/>
+                <p class="text-base med-weight-color">Home</p>
+            </div>
+            <div
+                onclick="nextSlide()"
+                class="fixed top-[10vh] right-[2.5vw] w-[10vw] h-[80vh] md:flex justify-end items-center font-regular hover:scale-110 hover:cursor-pointer transition-transform duration-200 hidden"
+            >
+                <p class="text-base med-weight-color">Turorial</p>
+                <img
+                    width="30px"
+                    src="./assets/icons/arrow-foward.png"
+                    alt=""
+                    class="block"
+                />
             </div>`,
-                    footer: "<a href='#' onclick='prevSlide()' class='bg-blue-500 text-white px-4 py-2 rounded'>Back to Home</a> <a href='#' onclick='nextSlide()' class='bg-blue-500 text-white px-4 py-2 rounded'>Contact Us</a>",
                 },
                 {
-                    title: "Contact",
+                    title: "Turtorial",
                     content: `<div
                 class="logo-live-demo-app flex justify-center items-center mt-3"
             >
@@ -365,7 +404,7 @@
                     class="flex-5 p-8 space-y-12 overflow-y-auto high-weight-color"
                 >
                     <p
-                        class="blue-color font-bold text-2xl text-center md:text-3xl md:mb-20"
+                        class="blue-color h-[70px]  font-bold text-2xl flex bg-[#D9D9D9] items-center justify-center md:text-3xl md:mb-4"
                     >
                         Turtorial
                     </p>
@@ -473,7 +512,7 @@
                         consectetur reiciendis
                     </p>
                     <div
-                        class="action-part flex justify-center items-center mt-10 mb-10"
+                        class="action-part flex justify-center items-center mt-10 mb-[10vh]"
                     >
                         <div
                             class="w-[80vw] flex justify-evenly items-center md:w-[50vw]"
@@ -526,21 +565,43 @@
             </div>
 
             <div
-                class="end-logo w-full flex justify-center items-center bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
+                class="px-5 bottom-0 md:static end-logo flex-row w-full flex justify-between md:justify-center items-center bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
             >
                 <img
                     class="w-[200px] md:w-[270px]"
                     src="./assets/images/logo-gdgoc-withname.png"
                     alt=""
                 />
+                <p
+                    class="md:absolute right-10 font-italic med-weight-color text-xs md:text-sm"
+                >
+                    by mndkhanh.
+                </p>
+            </div>
+            <div
+                onclick="prevSlide()"
+                class="fixed top-[10vh] left-[2vw] w-[10vw] h-[80vh] md:flex items-center font-regular hover:scale-110 hover:cursor-pointer transition-transform duration-200 hidden"
+            >
+                <img width="30px" src="./assets/icons/arrow_back.png" alt="" class="block"/>
+                <p class="text-base med-weight-color">Author</p>
+            </div>
+            <div
+                onclick="nextSlide()"
+                class="fixed top-[10vh] right-[2.5vw] w-[10vw] h-[80vh] md:flex justify-end items-center font-regular hover:scale-110 hover:cursor-pointer transition-transform duration-200 hidden"
+            >
+                <p class="text-base med-weight-color">Home</p>
+                <img
+                    width="30px"
+                    src="./assets/icons/arrow-foward.png"
+                    alt=""
+                    class="block"
+                />
             </div>`,
-                    footer: "<a href='#' onclick='prevSlide()' class='bg-blue-500 text-white px-4 py-2 rounded'>Back to Features</a>",
                 },
             ];
 
             let currentIndex = 0;
             const container = document.getElementById("slide-container");
-            const footerContainer = document.getElementById("footer-container");
             const sidebar = document.getElementById("sidebar");
             const nav = sidebar.querySelector("nav");
             const toggleBtn = document.getElementById("toggle-sidebar");
@@ -561,7 +622,6 @@
 
             function updateSlide() {
                 container.innerHTML = `<div class='slide slide-enter'>${slides[currentIndex].content}</div>`;
-                footerContainer.innerHTML = slides[currentIndex].footer;
                 setTimeout(() => {
                     container.firstElementChild.classList.add(
                         "slide-enter-active"
