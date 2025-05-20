@@ -1,0 +1,106 @@
+@font-face {
+    font-family: "Google Sans";
+    src: url("../assets/GoogleSans/GoogleSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Google Sans";
+    src: url("../assets/GoogleSans/GoogleSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Google Sans";
+    src: url("../assets/GoogleSans/GoogleSans-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+body {
+    font-family: "Google Sans", sans-serif;
+}
+
+.font-regular {
+    font-family: "Google Sans", sans-serif;
+    font-weight: 400;
+}
+
+.font-bold {
+    font-family: "Google Sans", sans-serif;
+    font-weight: 700;
+}
+
+.font-italic {
+    font-family: "Google Sans", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.font-medium {
+    font-family: "Google Sans", sans-serif;
+    font-weight: 600;
+}
+
+:root {
+    --low-weight-color: #d9d9d9;
+    --med-weight-color: #a4a4a4;
+    --high-weight-color: #595958;
+    --red-color: #eb4435;
+    --yellow-color: #f8ac19;
+    --blue-color: #557dbf;
+    --green-color: #42af60;
+}
+
+.low-weight-color {
+    color: #d9d9d9;
+}
+
+.med-weight-color {
+    color: #a4a4a4;
+}
+
+.high-weight-color {
+    color: #595958;
+}
+
+.red-color {
+    color: #eb4435;
+}
+
+.yellow-color {
+    color: #f8ac19;
+}
+
+.blue-color {
+    color: #557dbf;
+}
+
+.green-color {
+    color: #42af60;
+}
+
+.slide-enter {
+    transform: translateX(100%);
+    opacity: 0;
+}
+.slide-enter-active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+.slide-exit {
+    transform: translateX(0);
+    opacity: 1;
+}
+.slide-exit-active {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.active-link {
+    border-left: solid 4px var(--low-weight-color);
+}
